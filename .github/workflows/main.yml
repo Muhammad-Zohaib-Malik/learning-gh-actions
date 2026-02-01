@@ -5,11 +5,10 @@ jobs:
     my-first-job:
         runs-on: ubuntu-latest
         steps:
-            - name: List all files
-              run: ls -la
-            - name: Print Working Directory
-              run: pwd
-            - name: Checkout repo
-              uses: actions/checkout@v6
-            - name: List all files
-              run: ls -la
+            - name : Print Node version
+              run : node -v
+            - name : Install Node js version 25
+              uses : actions/setup-node@v6
+            - name : Print Node version
+              run : node -v
+              
