@@ -5,8 +5,9 @@ on: push
 jobs:
   my-first-job:
     runs-on: ubuntu-latest
-    steps: 
-        - run : echo ${{github.token}}
-        - run : echo ${{secrets.GITHUB_TOKEN}}
-
+    env:
+      USER: ubuntu
+    steps:
+      - run: echo ${{env.USER}}
+      - run: echo $USER
         
