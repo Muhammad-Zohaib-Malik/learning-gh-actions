@@ -5,9 +5,8 @@ on: push
 jobs:
   my-first-job:
     runs-on: ubuntu-latest
-    env:
-      USER: ubuntu
     steps:
-      - run: echo ${{env.USER}}
-      - run: echo "$USER"
+      - run: echo ${{secrets.MY_AWS_SECRET}}
+      - run: echo ${{vars.MY_TEST_VAR}}
+      
         
