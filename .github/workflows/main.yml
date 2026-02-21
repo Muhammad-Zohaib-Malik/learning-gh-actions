@@ -3,15 +3,17 @@ name: My First Workflow
 on: push
 
 jobs:
-  my-first-job:
+  my-prod-job:
+    environment: 'PROD'
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{secrets.MY_AWS_SECRET}}
-      - run: echo ${{vars.MY_TEST_VAR}}
-  my-second-job:
+      - run: echo ${{vars.APP_URL}}
+  my-test-job:
+    environment: 'TEST'
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{toJson(secrets)}}
-      - run: echo ${{vars}}    
-      
+      - run: echo ${{secrets.MY_AWS_SECRET}}
+      - run: echo ${{vars.APP_URL}}
+
         
