@@ -8,5 +8,10 @@ jobs:
     steps:
       - run: echo ${{secrets.MY_AWS_SECRET}}
       - run: echo ${{vars.MY_TEST_VAR}}
+  my-second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{secrets}}
+      - run: echo ${{vars}}    
       
         
